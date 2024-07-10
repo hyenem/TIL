@@ -3,6 +3,17 @@
 ## commit/push 규칙
 * 꼭! 항상! 절대! `add`, `commit` , `push`는 최상단 폴더(`init`한 곳)에서 작업하기
 
+## 내가 지금 사용하고 있는 컴퓨터에서 처음으로 깃 작업을 할 때 한 번 만 하면 되는 작업
+
+### `git config`
+* 계정 설정 및 추가
+    * `git config --global user.name [나의 username]`
+    * `git config --global user.email [나의 github 이메일]`
+* 계정 확인
+    * `git config --global user.name`
+    * `git config --global user.email`
+* 만약에 잘못 쓰면 코드 다시 쓰면 덮어쓰기 됨
+
 ## 처음으로 깃을 시작할 때 한 번 만 하면 되는 작업
 
 ### `git init`
@@ -23,3 +34,17 @@
 ### `git commit`
 
 ### `git push`
+
+## 상태확인
+### working directory에서
+- `git status`
+    - `add` 전/후
+
+### staging area에서 (.git)
+- `git status`
+    - 추적이 되고 있는지만 확인 가능
+- `git log`
+    - commit 이후에만!!!
+    - `git status --oneline`이라고 하면 한 줄로 간결하게 알려줌
+    - 항상 내림차순
+    * `HEAD`는 내가 바라보고 있는 branch를 의미함
