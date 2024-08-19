@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>특수문자</h1>
+    한 칸 띄기(&nbsp;) <br>
+    두 칸 띄기(&ensp;) <br>
+    세 칸 띄기(&emsp;) <br>
+    &lt; &gt; &amp; &quot; &copy; &reg; &plusmn;
+
+    <h1>Semantic Tag</h1>
+    <h2>종류</h2>
+    header, nav, section, article, footer, h1~h6
+    <h3>특징</h3>
+    <li>다양한 형식으로 활용 가능하며 정석/정답은 없음</li>
+    <li>id와 class 속성으로 대신할 수 있음</li>
+    <li>브라우저에 표시되는 정보를 태그로 표현</li>
+    <li>단순히 구역을 나누는 것 뿐만 아니라, 구조를 나눈 데에 의미가 필요</li>
+    <li>요소의 의미를 확실히 해 코드의 가독성을 높이고 유지보수를 쉽게함.</li>
+
+    <h1>Block Text Content</h1>
+    <li>남은 공간을 Margin으로 채우는 경우</li>
+
+    <blockquote>
+        blockquote를 적용한 것
+        들여쓰기를 한 것으로 그려짐
+    </blockquote>
+
+    구분선
+    <hr>
+
+    <pre>
+        pre
+        공백, 불 바꿈 등
+    입력된 그대로
+화면에 표시
+    </pre>
+
+    <p>
+        p
+        하나의 문단.
+    </p>
+
+    <ul>
+        ul
+        unorderd list
+        <li> li 를 이용하여</li>
+        <li> 번호 없는 목록을 만들 수 있다.  </li>
+    </ul>
+
+    <ol type="a" start = "4">
+        ol
+        ordered list
+        <li> li를 이용하여 정렬된 목록을 만들 수 있다.</li>
+        <li> start 와 type을 이용해서 번호의 형태와 시작 번호를 조정할 수 있다.</li>
+    </ol>
+
+    <div>
+        div 구문 컨텐츠를 위한 블록 컨테이너
+    </div>
+
+    <h1>Inline Text Content</h1>
+    <li>남은 공간을 Margin으로 채우지 않는 경우</li>
+
+    <a href = "HTML_myown.html"> a 하이퍼 링크를 생성</a>
+    
+    <span>
+        span 구문 콘텐츠를 위한 인라인 컨테이너
+    </span>
+
+    <b>b 굵게함</b>
+    <strong>strong 굵게 하고 강조함</strong>
+    <i>i 기울임</i>
+    <em>em 기울이고 강조함</em>
+    <s>s 취소선</s>
+    <u>u 밑줄</u>
+    <q>q 짧은 인라인 인용문</q>
+    <sup>sup 위첨자</sup>
+    <sub>sub 아래첨자</sub>
+    <br> br 텍스트 안에서 줄 바꿈을 생성
+
+    <h1>Image & Multimidea</h1>
+    img : src로 소스 가져오기, alt로 대체 설명글 넣기, height, width로 크기 조정하기 <br>
+    <img src="https://www.next-t.co.kr/public/uploads/7b7f7e2138e29e598cd0cdf2c85ea08d.jpg" alt="<img>" height="100"/>
+
+    <h1>Table Content</h1>
+    <table>table로 테이블 생성하기
+        <thread>
+            <th>thread는 테이블의 열 머리글인 행들의 집합</th>
+            <th>th를 이용해서 머리글을 각각 적어줌</th>
+        </thread>
+        <tbody>tbody는 표의 여러 행을 묶어서 표 본문 구성
+            <th> th로 머리글을 쓸 수도 있고</th>
+            <td> td로 데이터를 입력할 수도 있음</td>
+        </tbody>
+        <tfoot>
+            <th>테이블의 열을</th>
+            <th>tfoot을 이용해서</th>
+            <td>요약할 수 있다.</td>
+            <th>th와</th>
+            <td>td 이용</td>
+        </tfoot>
+        <colgroup>colgroup을 이용해서 열을 묶는 그룹을 정의
+            <col> 표의 열을 나타내는 col
+        </colgroup>
+        <caption>caption으로 표의 설명 또는 제목을 나타냄</caption>
+
+    </table>
+
+    <h2>Table Content 실습</h2>
+    <table border="1">
+        <caption>자바비전공자반</caption>
+        <thread>
+            <th>지역</th>
+            <th>반</th>
+            <th>대장</th>
+            <th>인원</th>
+        </thread>
+        <tbody>
+            <tr>
+                <td rowspan='2'>서울</td>
+                <td>5반</td>
+                <td>강아지</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td>7반</td>
+                <td>복숭아</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td rowspan="2">대전</td>
+                <td>3반</td>
+                <td>독수리</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>4반</td>
+                <td>유니콘</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td colspan="3">조직원</td>
+                <td>n명</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h1>form</h1>
+    <h2>우선 form과 input을 이용해서 실습부터 해보자</h2>
+    <form>
+        <label>이름: </label>
+        <input placeholder="이름을 입력하세요.">
+        <button>전송</button>
+        <select>
+            <option>우리는 하나</option>
+            <option>너희는 안하냐</option>
+        </select>
+        <fieldset>
+            <legend>나의 이야기:</legend>
+            <textarea placeholder="'피승빈'을 구글에 검색해보세요."></textarea>
+        </fieldset>
+    </form>
+    <h2>이제 아직 안쓴 것들을 함 써보자.</h2>
+    <h2>input의 속성들</h2>
+    <form>
+        <input autofocus placeholder="autofocus는 선택돼있음.">
+        <input readonly placeholder="readonly는">
+        <input readonly="readonly" placeholder="리드온리">
+        <input readonly="true" placeholder="쓰지못함.">
+        <input required placeholder="required는 필수자료">
+        <input min="0" max="100" step="1" placeholder="min, max, step">
+        <input size="100" placeholder="size는 화면에 보여지는 글자 길이를 지정. 내가 100으로 맞춰둬서 이렇게 길게 써도 다 보이지롱">
+        <input minlength="10" maxlength="11" placeholder="입력 최대 최소 길이 지정 가능">
+    </form>
+</body>
+</html>
