@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /*
+            Q. h2 태그의 텍스트 색상을 초록색으로 적용해 봅시다.
+        */
+        h2 {
+         color: green;
+        }
+
+        /*
+            Q. id가 "heading"인 태그의 텍스트 색상을 빨간색으로 적용해 봅시다.
+        */
+        #heading {
+            color: red;
+        }
+
+        /*
+            Q. class가 "heading"인 태그의 텍스트 색상을 파란색으로 적용해 봅시다.
+        */
+        .heading {
+            color:blue;
+        }
+
+        /*
+            Q. h3 태그와 p 태그 모두 텍스트 색상을 오렌지로 적용해 봅시다.
+        */
+        h3, p {
+            color: orange;
+        }
+
+
+
+        /*
+            Q. ul 태그가 가지고있는 자식 태그들 중 li 태그의 텍스트를 빨간색으로 적용해 봅시다.
+        */
+        ul li {
+            color: red;
+        }
+
+        /*
+            Q. ol 태그가 가지고있는 자식 태그들 중 li 태그의 텍스트를 파란색으로 적용해 봅시다.
+        */
+        ol li {
+            color: blue;
+        }
+
+        /*
+            Q. class가 "grandfather"인 태그의 자손 태그 중 class가 "child"인 태그의 텍스트를 초록색으로 적용해 봅시다.
+        */
+        .grandfather .child {
+            color: green;
+        }
+
+        .box {
+            width: 300px;
+            border: 1px solid black;
+        }
+
+        /*
+            Q. class가 "box"인 태그 위로 마우스를 올리면 텍스트는 흰색으로 배경은 검정색이 되도록 적용해 봅시다.
+        */
+        .box:hover {
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>이 부분에 초록색 색상을 적용합니다.</h2>
+
+    <h2 id="heading">이 부분에 빨간색 색상을 적용합니다.</h2>
+
+    <h2 class="heading">이 부분에 파란색 색상을 적용합니다.</h2>
+
+    <h3>이 부분에 오렌지 색상을 적용합니다.</h3>
+    <p>이 부분에 오렌지 색상을 적용합니다.</p>
+
+    <ul>
+        <li>이 리스트 항목은 빨간색1</li>
+        <li>이 리스트 항목은 빨간색2</li>
+        <li>이 리스트 항목은 빨간색3</li>
+    </ul>
+
+    <ol>
+        <li>이 리스트 항목은 파란색1</li>
+        <li>이 리스트 항목은 파란색2</li>
+        <li>이 리스트 항목은 파란색3</li>
+    </ol>
+
+    <div class="grandfather">
+        <div class="father">
+            <p class="child">
+                이 텍스트의 색상은 초록색
+            </p>
+        </div>
+    </div>
+
+    <div class="box">
+        마우스를 올리면 색상이 반전됩니다.
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WELCOME TO SSAFY</title>
+</head>
+<body>
+  <header>
+    <img src="../img/ssafy_logo.png" alt="ssafy_logo">
+    <a href="./index.html">게시판</a>
+  </header>
+  <nav>
+    <a href="./user/login.html">로그인</a>
+    <a href="./user/signup.html">회원가입</a>
+    <a href="./user/mypage.html">로그인</a>
+  </nav>
+  <main>
+    <h2>글작성</h2>
+    <form>
+      <article>
+        <label for="title">게시글 제목: </label>
+        <input type="text" id="title" name="title" required>
+      </article>
+      <article>
+        <label for="content">게시판 설명: </label>
+        <textarea name="content" id="content" rows="7" required></textarea>
+      </article>
+      <article>
+        <label for="file">첨부파일: </label>
+        <input type="file" id="file" name="file">
+      </article>
+      <input type="submit" value="저장">
+    </form>
+  </main>
+  <footer>
+    <span>&copy; SSAFY Corp.</span>
+  </footer>
+</body>
+</html>
