@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <div v-for="person in myArr">
+        {{person.name}} / {{person.age}}
+      </div>
+      <hr>
+      <!-- 순서가 중요하다! 뒤에가 무조건 인덱스 -->
+      <div v-for="(person, index) in myArr">
+        {{index+1}} : {{person.name}} / {{person.age}}
+      </div>
+      <hr>
+      <div v-for="item in myObj">
+        {{item}}
+      </div>
+      <hr>
+      <!-- 순서가 중요하다!  -->
+      <div v-for="(value, key, index) in myObj">
+        {{index}} -> {{key}} : {{value}}
+      </div>
+      <!-- 여러요소 동레벨로 -->
+       <ul>
+        <template v-for="item in myArr">
+          <li>{{item.name}}</li>
+          <li>{{item.age}}</li>
+          <hr>
+        </template>
+       </ul>
+       <!-- 중첩 반복문 -->
+        <ul v-for="person in myInfo">
+          <li v-for="friend in person.friends">
+            {{person.name}}과 {{friend}}는 친구입니다.
+          </li>
+        </ul>
+        <!-- 구구단 -->
+    </div>
+    <script>
+      const { createApp, ref } = Vue;
+
+      const app = createApp({
+        setup() {
+          const myArr = ref([
+            { name: "Alice", age: 20 },
+            { name: "Bella", age: 21 },
+          ]);
+          const myObj = ref({
+            name: "Cathy",
+            age: 30,
+          });
+
+          // nested v-for
+          const myInfo = ref([
+            { name: "Alice", age: 20, friends: ["Bella", "Cathy", "Dan"] },
+            { name: "Bella", age: 21, friends: ["Alice", "Cathy"] },
+          ]);
+
+          return {
+            myArr,
+            myObj,
+            myInfo,
+          };
+        },
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>

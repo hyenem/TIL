@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04_fixed</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    div{
+      width: 100px; 
+      height: 100px;
+      text-align: center;
+      line-height: 100px;
+      color: black;
+      box-sizing: border-box;
+    }
+  
+    .fixed{
+      background-color: #f2a796;
+      position: fixed ;
+      bottom: 0 ;
+      right: 0 ;
+    }
+  
+  </style>
+</head>
+<body>
+  <!-- normal flow에서 벗어나 viewport 기준으로 위치 -->
+  <div class="fixed">
+    fixed
+  </div>
+</body>
+</html>

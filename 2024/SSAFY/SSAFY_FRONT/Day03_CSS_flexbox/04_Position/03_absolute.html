@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03_absolute</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    div{
+      width: 100px; 
+      height: 100px;
+      text-align: center;
+      line-height: 100px;
+      color: black;
+      font-size: small;
+      box-sizing: border-box;
+    }
+  
+   .parent{
+      position: relative ;
+      border: 1px dotted #f296af;
+    }
+    
+    .absolute-child{
+      position: absolute ;
+      background-color: #f296af;
+      top: 70px ;
+      left: 70px ;
+    }
+  </style>
+</head>
+<body>
+  <!-- normal flow에서 벗어나 부모/조상 요소를 기준으로  -->
+  <div class="parent">
+    부모-relative
+  </div>
+  
+  <div class="absolute-child">
+    자식-absolute
+  </div>
+</body>
+</html>

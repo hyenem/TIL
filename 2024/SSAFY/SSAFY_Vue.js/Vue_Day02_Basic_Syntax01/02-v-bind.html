@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <img v-bind:src="imageSrc">
+      <a v-bind:href="myURL">myURL</a>
+      <p :[dyattr]="dyValue">동적 속성</p>
+    </div>
+    <script>
+      const { createApp, ref } = Vue;
+
+      const app = createApp({
+        setup() {
+          const imageSrc = ref("https://picsum.photos/200");
+          const myURL = ref("https://edu.ssafy.com")
+          const dyattr = ref("my-bind")
+          const dyValue = ref("hello Vue")
+
+          return { imageSrc , myURL, dyattr, dyValue};
+        },
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+{
+    // "workbench.colorTheme": "Bearded Theme Milkshake Blueberry",
+    // "workbench.colorTheme": "Bluloco Light",
+    "workbench.colorTheme": "Bearded Theme Arc EolStorm",
+
+    "workbench.iconTheme": "nomo-dark-extended",
+
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    
+    "[html]": {
+        "editor.tabSize": 2,
+      },
+
+    "[css]": {
+        "editor.tabSize": 4,
+    },
+
+    "[javascript]": {
+        "editor.tabSize": 2,
+    }
+}

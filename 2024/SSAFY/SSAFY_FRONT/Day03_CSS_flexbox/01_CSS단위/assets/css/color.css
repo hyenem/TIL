@@ -1,0 +1,34 @@
+/* div {
+    color: black;
+    color: #000;
+    color: #ffffff;
+    color: rgb(255, 0, 0);
+    color: hsl(120, 100%, 0);
+    color: rgba(0, 0, 255, 0.5);
+    color: hsla(120, 100%, 0, 0.5);
+} */
+
+.black {
+    color: black;
+    /* color: #000; */
+    color: hsl(120, 100%, 0);
+}
+
+.white {
+    /* color: white; */
+    color: #ffffff;
+}
+
+.red {
+    color: red;
+    /* color: rgb(255, 0, 0); */
+}
+
+.half-black {
+    color: hsla(120, 100%, 0, 0.5);
+}
+
+.half-blue {
+    color: rgba(0, 0, 255, 0.5);
+}
+

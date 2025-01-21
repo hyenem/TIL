@@ -1,0 +1,30 @@
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background-color: orange;
+    margin-bottom: 1rem;
+}
+
+/* 주석을 해지하고 결과를 확인해보세요 */
+/* 
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+#green {
+    background-color: green;
+}
+
+.yellow {
+    background-color: yellow !important; 
+}
+
+
+ */

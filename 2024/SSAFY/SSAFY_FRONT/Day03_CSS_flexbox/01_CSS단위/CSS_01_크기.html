@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>단위_01_크기</title>
+    <link rel="stylesheet" href="./assets/css/color.css">
+    <link rel="stylesheet" href="./assets/css/paragraph.css">
+    <style>
+      .parent {
+          font-size: 18px;
+      }
+
+      .em {
+          font-size: 1.5em;
+      }
+
+      .rem {
+          font-size: 1.4rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>body 태그의 font-size는 20px입니다.</p>
+    </div>
+    
+    <!-- em - 부모의 상속 YES. 배수 단위, 요소에 지정된 사이즈에 상대적인 사이즈-->
+    <div>
+      <p>em - 부모의 상속 <span class="red">YES</span>. 배수 단위, 요소에 지정된 사이즈에 상대적인 사이즈</p>
+      <ul class="parent">
+        <li>부모 요소는 18px 입니다.</li>
+        <li>.em (em클래스)의 font-size는 1.5em입니다.</li>
+        <li class="em">1.5em</li>
+        <ul><li><!-- 몇 픽셀일까요? --></li></ul>
+      </ul>
+    </div>
+
+    <!-- rem - 부모의 상속 NO. 최상위 요소(html)의 사이즈를 기준으로 배수 단위-->
+    <div>
+      <p>rem - 부모의 상속 <span class="half-blue">NO</span>. 최상위 요소(html)의 사이즈를 기준으로 배수 단위</p>
+      <ul class="parent">
+        <li>부모 요소는 18px 입니다.</li>
+        <li>.rem (rem클래스)의 font-size는 1.4rem입니다.</li>
+        <li class="rem">1.4rem</li>
+        <ul><li><!-- 몇 픽셀일까요? --></li></ul>
+        <li>no class</li>
+        <ul><li><!-- 몇 픽셀일까요? --></li></ul>
+      </ul>
+    </div>
+
+    <!-- normal -->
+    <div>
+      <p>부모 태그도 없다면</p>
+      <ul>
+        <li>other list no class</li>
+        <ul>
+          <li><!-- 몇 픽셀일까요? --></li>
+          <li>부모의 내용 그대로</li>
+        </ul>
+      </ul>
+    </div>
+
+
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 빈으로 등록하기 위한 작업 -->
+	<bean class="com.ssafy.di.Desktop" id="desktop"></bean>
+	
+	<!-- 생성자 주입 관련한 생성자가 있어야한다!! -->
+<!-- 	<bean class="com.ssafy.di.Programmer" id="programmer">
+		<constructor-arg ref = "desktop"></constructor-arg>
+	</bean> -->
+		
+		
+	<!-- 설정자 주입 -->
+	<bean class="com.ssafy.di.Programmer" id="programmer">
+		<property name="computer" ref="desktop"></property>
+		<!-- name: 설정자 이름 -->
+	</bean>
+</beans>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WELCOME TO SSAFY</title>
+</head>
+<body>
+  <header>
+    <img src="../img/ssafy_logo.png" alt="ssafy_logo">
+    <a href="./index.html">게시판</a>
+  </header>
+  <nav>
+    <a href="./user/login.html">로그인</a>
+    <a href="./user/signup.html">회원가입</a>
+    <a href="./user/mypage.html">로그인</a>
+  </nav>
+  <main>
+    <section>
+      <h2>프로그래밍 지식게시판</h2>
+      <span>IT관련 지식을 공유하는 게시판입니다.</span>
+    </section>
+    <section>
+      <form name="search">
+        <select name="criteria">
+          <option>제목</option>
+          <option>글쓴이</option>
+        </select><br/>
+        <input type="text"><br/>
+        <input type="submit" value="검색">
+      </form>
+      <hr>
+      <table>
+        <thead>
+          <tr>
+            <th>글번호</th>
+            <th>제목</th>
+            <th>글쓴이</th>
+            <th>작성일</th>
+            <th>조회수</th>
+            <th>좋아요</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>10</td>
+            <td><a href="../article/detail.html">클린코드</a></td>
+            <td>삼식이</td>
+            <td>2022-08-01</td>
+            <td>10</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td><a href="">Spring 프레임워크 후속편</a></td>
+            <td>홍싸피</td>
+            <td>2022-07-20</td>
+            <td>12</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td><a href="">프론트엔드 개발자란</a></td>
+            <td>따봉맨</td>
+            <td>2022-07-18</td>
+            <td>73</td>
+            <td>0</td>
+          </tr>
+        </tbody>
+      </table>
+      <a href="../article/write.html">글쓰기</a>
+    </section>
+  </main>
+  <footer>
+    <span>&copy; SSAFY Corp.</span>
+  </footer>
+</body>
+</html>

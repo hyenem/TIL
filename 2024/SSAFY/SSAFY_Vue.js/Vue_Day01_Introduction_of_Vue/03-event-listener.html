@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+  <div id="app">
+    <button v-on:click="increment">{{count}}</button>
+  </div>
+  <script>
+    const { createApp, ref } = Vue; //구조분해할당
+    // 2. Vue Instance 생성 완료
+    const app = createApp({
+      setup(){
+        const count = ref(0)
+        const increment = function(){//함수 표현식
+          count.value++ //카운트 값을 증가시키는 메서드
+        }
+        return{
+          count,
+          increment,
+        }
+      }
+    })
+    // 3. DOM과 연결을 하겠다.
+    app.mount("#app")
+  </script>
+</body>
+</html>

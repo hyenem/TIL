@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue</title>
+  <!-- 1. CDN 추가 -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- 꺼내서 사용할 때는 .value가 필요 없다. 자동으로 사용한 것과 같음 -->
+    <p>{{message}}</p>
+    <p>{{message.split('').reverse().join('')}}</p>
+  </div>
+  <!-- script -->
+  <script>
+    const { createApp, ref } = Vue; //구조분해할당
+    // 2. Vue Instance 생성 완료
+    const app = createApp({
+      setup(){
+        // 4. 변수를 사용하기 위해서는 ref 메서드로 감싼다
+        const message = ref("Hello World")
+        console.log(message)       //ref 객체
+        console.log(message.value) //값을 보고싶다면 value 속성을 사용해!
+        // 5. 템플릿에서 사용하기 위해서는,, 반환 해야된다.(객체타입)
+        return{
+         message
+        }
+      }
+    })
+    // 3. DOM과 연결을 하겠다.
+    app.mount("#app")
+  </script>
+</body>
+</html>

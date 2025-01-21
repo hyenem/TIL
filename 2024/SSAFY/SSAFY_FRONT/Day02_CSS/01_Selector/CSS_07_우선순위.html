@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>07_우선순위</title>
+  <link rel="stylesheet" href="./specificity.css">
+</head>
+<body>
+  <div>0</div> <!-- -->
+  <div class="red">1</div> <!-- -->
+  <div class="red blue">2</div> <!-- -->
+  <div class="blue red">3</div> <!-- -->
+  <div class="red" id="green">4</div> <!-- -->
+  <div class="red" id="green" style="background-color: grey">5</div> <!-- -->
+  <div class="yellow" id="green">6</div> <!-- -->
+  <div class="yellow" id="green" style="background-color: purple">7</div> <!-- -->
+</body>
+</html>
+
