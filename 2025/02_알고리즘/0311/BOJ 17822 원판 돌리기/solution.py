@@ -65,8 +65,7 @@ N, M, T = map(int, input().split())
 arr = [list(map(int, input().split())) for _ in range(N)]
 move = [list(map(int,input().split())) for _ in range(T)]
 dxdy = ((0, 1), (0, -1), (-1, 0), (1, 0))
-totsum = sum([sum(ele
-                  ) for ele in arr])
+totsum = sum([sum(ele) for ele in arr])
 totcnt = M*N
 idx = [0]*N
 flag = 1
@@ -77,8 +76,7 @@ for x, d, k in move:
     for i in range(x-1, N, x):
         idx[i] = (idx[i]+(d*2-1)*k)%M
 
-    bf = flag
-    # 인접한 같은 숫자 있는지 찾기
+   # 인접한 같은 숫자 있는지 찾기
     flag = 0
     for i in range(N):
         for j in range(M):
