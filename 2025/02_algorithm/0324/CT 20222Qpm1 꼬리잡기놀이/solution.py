@@ -39,7 +39,6 @@
 * 팀별 길이랑 머리/꼬리 위치를 저장하고 한길로 쭉 가서 머리 몇번째 사람인지 계싼
 
 '''
-
 from collections import deque
 
 # 모든 사람 움직이기
@@ -48,24 +47,18 @@ def move():
         hx, hy, tx, ty, length = team[i]
 
         # 다음 머리 찾기
-        # 빈 길이 있으면 거기로 가기
-        # 빈 길이 하나도 없으면 머리랑 꼬리밖에 없다는 말 -> 꼬리로가기
         for dx, dy in dxdy:
             nhx, nhy = hx+dx, hy+dy
             if not(0<=nhx<N and 0<=nhy<N): continue
-            if arr[nhx][nhy]==4:
+            if arr[nhx][nhy] in {3, 4}:
                 break
-        else : nhx, nhy = tx, ty
 
         # 다음 꼬리 찾기
-        # 2번(앞사람) 있으면 거기로 가기
-        # 2번 하나도 없으면 머리랑 꼬리밖에 없다는 말 -> 머리로 가기
         for dx, dy in dxdy:
             ntx, nty = tx+dx, ty+dy
             if not(0<=ntx<N and 0<=nty<N): continue
             if arr[ntx][nty]==2:
                 break
-        else: ntx, nty = hx, hy
 
         # 머리꼬리 움직이기
         arr[hx][hy]=2
@@ -116,6 +109,7 @@ def score(sx, sy):
 
     # 1이면 누적 칸수의 제곱이 점수
     # 3이면 길이에서 누적 칸 수 뺸것의 제곱이 점수
+    # 추가되는 점수랑 추가된 팀 인덱스 반환
     if arr[sx][sy]==1:
         return cnt**2, teamarr[sx][sy]
     else :
@@ -132,13 +126,13 @@ teamarr = [[-1]*N for _ in range(N)]
 visited = [[0]*N for _ in range(N)]
 for i in range(N):
     for j in range(N):
-        if arr[i][j]==1:
+        if arr[i][j]==1:                # 머리 발견!
 
             teamidx = len(team)
 
             q = deque([(i, j)])
-            teamarr[i][j]=teamidx
-            cnt = 1
+            teamarr[i][j]=teamidx       # 팀어레이에는 몇번째 팀이 다니는 길인지 표시
+            cnt = 1                     # 그 팀에 있는 사람 수
             while q:
                 x, y = q.popleft()
                 for dx, dy in dxdy:
@@ -152,6 +146,7 @@ for i in range(N):
                     teamarr[nx][ny]=teamidx
                     q.append((nx, ny))
 
+            # 머리 좌표, 꼬리좌표, 사람 수
             team.append((i, j, tx, ty, cnt))
 
 ans = 0
