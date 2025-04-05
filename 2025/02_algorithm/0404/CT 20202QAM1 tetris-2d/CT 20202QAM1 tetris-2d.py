@@ -1,3 +1,56 @@
+'''2회독
+제출횟수 : 1회
+풀이시간 : 21분
+
+* 이중 for문 break 잘했나! 하나만 끝나지 않았나 확인할 것!
+* 이외의 피드백 없음
+
+'''
+
+def play(arr, w, h):
+    global ans
+
+    flag = 0
+    for i in range(2, 6):
+        for j in w:
+            if arr[i][j]==1:
+                i -= 1
+                flag = 1
+                break
+        if flag: break
+
+    for ni in range(i+1-h, i+1):
+        for j in w:
+            arr[ni][j]=1
+
+    for i in range(2, 6):
+        if sum(arr[i])==4:
+            ans+=1
+            del arr[i]
+            arr.insert(0, [0]*4)
+
+    for i in range(2):
+        if sum(arr[i])!=0:
+            arr.pop()
+            arr.insert(0, [0]*4)
+
+
+K = int(input())
+blocks = [tuple(map(int, input().split())) for _ in range(K)]
+down = [[0]*4 for _ in range(6)]
+right = [[0]*4 for _ in range(6)]
+
+ans = 0
+for t, x, y in blocks:
+    if t==1: w, h = (y,), (x,)
+    elif t==2: w, h = (y, y+1), (x,)
+    else : w, h = (y,), (x, x+1)
+    play(down, w, len(h))
+    play(right, h, len(w))
+
+print(ans)
+print(sum(map(sum, down))+sum(map(sum, right)))
+
 '''
 풀이시간 : 52분
 제출횟수 : 3회
@@ -56,7 +109,6 @@
 * 일단 복붙해서 제출하기로함
 * 같은 로직 함수로 뽑아서 처리함
 
-'''
 
 
 def drop(arr, W, H):
@@ -137,4 +189,4 @@ for t, x, y in blocks:
 print(ans)
 ans2 = sum(map(sum, green)) + sum(map(sum, blue))
 print(ans2)
-
+'''
