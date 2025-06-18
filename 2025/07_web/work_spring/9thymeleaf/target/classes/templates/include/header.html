@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>상품관리</title>
+</head>
+<body>
+
+<div th:fragment="headerFragment">
+	<style>
+	#head {
+		text-align: center;
+	}
+	#info {
+		text-align: right;
+	}
+	</style>
+	<h1 id="head">상품관리</h1>
+	<div th:if="${session.loginUser!=null}" id="info">
+		<span th:text="'['+${session.loginUser.name}+'] 님 반갑습니다.'">[사용자] 님 반갑습니다.</span>
+		<a th:href="@{/logout}">로그아웃</a>
+	</div>
+	<hr>
+	<script th:inline="javascript">
+	let msg=[[${msg}]];
+	if(msg) alert(msg);
+	</script>
+</div>
+
+</body>
+</html>

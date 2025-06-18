@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>메인 페이지</title>
+</head>
+<body class="bg-light p-4">
+<th:block th:replace="~{include/header ::headerFragment}"></th:block>
+
+<div class="container mt-5" th:if="${session.loginUser==null}">
+    <h2>로그인</h2>
+    <form th:action="@{/login}" method="post">
+      <div class="mb-3 mt-3">
+        <label for="#id">아이디:</label>
+        <input type="text" id="id" name="id" value="scsa"><br>
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="#pw">패스워드:</label>
+        <input type="text" id="pw" name="pw" value="1234"><br>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" id="idcheck" name="idcheck" value="on">
+        <label for="#idcheck">id 기억하기:</label>
+      </div>
+      <input type="submit" class="btn btn-outline-primary" value="로그인">
+      <input type="button" class="btn btn-outline-secondary" value="초기화">
+    </form>
+</div>
+<p>
+<div class="container mt-4 d-flex gap-2">
+  <a class="btn btn-primary" th:href="@{/regist}">상품등록</a>
+  <a class="btn btn-success" th:href="@{/list}">상품목록</a>
+  <a class="btn btn-outline-secondary" th:href="@{/endprod}">마지막등록상품</a>
+  <br>
+  <a class="btn btn-info" th:href="@{/rest}">상품REST</a>
+  <a class="btn btn-outline-warning" th:href="@{/swagger-ui.html}">상품API</a>
+</div>
+<script th:inline="javascript">
+  document.querySelector("form").onsubmit=function(){
+    let id=document.querySelector("#id");
+    if(id.value.length==0){
+      alert("아이디 확인");
+      id.focus();
+      event.preventDefault();
+      return;
+    }
+    let pw=document.querySelector("#pw");
+    if(pw.value.length==0){
+      alert("패스워드 확인");
+      pw.focus();
+      event.preventDefault();
+      return;
+    }
+  }
+  function getCookie(name) {
+        const value=`; ${document.cookie}`;
+        const parts=value.split(`; ${name}=`);
+        if(parts.length===2) return parts.pop().split(';').shift();
+  }
+  const idcheck=getCookie('idcheck');
+  if(idcheck){
+    document.getElementById('id').value=idcheck;
+    document.getElementsByName('idcheck')[0].checked=true;
+  } 
+</script>
+</body>
+</html>

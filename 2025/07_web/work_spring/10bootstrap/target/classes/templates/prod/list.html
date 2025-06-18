@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>상품 목록</title>
+</head>
+
+<body class="bg-light p-4">
+<th:block th:replace="~{include/header :: headerFragment }"></th:block>
+
+<div class="container mt-5">
+	<div th:if="${!#lists.isEmpty(prods)}">
+		<form th:action="@{/list}" method="get">
+		<select name="field">
+			<option value="LIST">전체</option>
+			<option value="TITLE" th:selected="${field=='TITLE'}">이름</option>
+			<option value="PRICE" th:selected="${field=='PRICE'}">가격</option>
+		</select>
+		<input align="left" type="text" size="17" name="text" th:value="${text}">
+		<input type="submit" value="검색">
+		</form>
+		<form th:action="@{/deletm}" method="post">
+		<table class="table table-bordered" style="border-collapse: collapse;">
+			<thead class="table-light">
+				<tr><th>상품번호</th><th>상품이름</th><th>상품가격</th><th>상품회사</th><th><input class="btn btn-warning" type="submit" value="삭제"></th></tr>
+			</thead>
+			<tbody>
+
+				<tr th:each="prod:${prods}">
+					<td th:text="${prod.num}"></td>
+					<td><a th:href="@{/detail(num=${prod.num})}">[[${prod.title}]]</a></td>
+					<td th:text="${prod.price}"></td>
+					<td><a th:href="@{/view(cno=${prod.cno})}">[[${prod.comp.name}]]</a></td>
+					<th><input class="form-check-input" type="checkbox" name="nums" th:value="${prod.num}"></th></tr>
+			</tbody>
+		</table>
+		</form>
+	</div>
+	<div class="alert alert-warning mt-4" th:if="${#lists.isEmpty(prods)}">
+		<p>검색된 상품이 없습니다.</p>
+	</div>
+	<div class="mt-4 d-flex gap-2">
+		<a class="btn btn-primary" th:href="@{/regist}">상품등록</a>
+		<a class="btn btn-outline-info" th:href="@{/}">메인으로</a>
+	</div>
+</div>
+</body>
+</html>

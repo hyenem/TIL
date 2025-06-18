@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>상품 수정</title>
+</head>
+
+<body class="bg-light p-4">
+<th:block th:replace="~{include/header :: headerFragment }"></th:block>
+<h2>상품수정</h2>
+<form th:action="@{/update}" method="post">
+  상품번호: <input type="text" name="num" th:value="${prod.num}" readonly><br>
+  상품이름: <input type="text" name="title" th:value="${prod.title}"><br>
+  상품가격: <input type="text" name="price" th:value="${prod.price}"><br>
+  상품회사: <select name="cno">
+  		<option th:each="comp:${comps}" th:value="${comp.cno}" th:select="${comp.cno==prod.cno}">[[${comp.name}]]</option>
+  </select><br>
+  <input type="submit" value="수정">
+  <input type="reset" value="취소">
+</form>
+<p>
+<a th:href="@{/list}">상품목록</a>
+<a th:href="@{/}">메인으로</a>
+</body>
+</html>

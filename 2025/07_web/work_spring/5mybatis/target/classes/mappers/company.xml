@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.scsa.sf.model.mapper.CompanyMapper">
+	<resultMap type="Company" id="compProds">
+		<id property="cno" column="cno"/>
+		<result property="name" column="name"/>
+		<result property="loc" column="loc"/>
+		<collection property="prods" ofType="com.scsa.sf.dto.Product">
+			<id property="num" column="num"/>
+			<result property="title" column="title"/>
+			<result property="price" column="price"/>
+			<result property="cno" column="cno"/>
+		</collection>
+	</resultMap>
+	<select id="select" resultMap="compProds">
+		select * from product p join company c on c.cno=p.cno
+		where c.cno=#{cno}
+	</select>
+	<select id="selectAll" resultMap="compProds">
+		select * from product p join company c on c.cno=p.cno
+		order by c.cno
+	</select>
+</mapper>

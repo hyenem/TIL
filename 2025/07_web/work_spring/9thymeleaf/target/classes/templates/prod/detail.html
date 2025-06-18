@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>상품 등록</title>
+</head>
+
+<body>
+<th:block th:replace="~{include/header :: headerFragment }"></th:block>
+<h2>상품상세</h2>
+<div th:if="${prod!=null}">
+	<table>
+		<tr><th>상품번호 : </th><td th:text="${prod.num}"></td></tr>
+		<tr><th>상품이름 : </th><td th:text="${prod.title}"></td></tr>
+		<tr><th>상품가격 : </th><td th:text="${prod.price}"></td></tr>
+		<tr><th>상품회사 : </th><td><a th:href="@{/view(cno=${prod.cno})}">[[${prod.comp.name}]]</a></td></tr>
+	</table>
+</div>
+<div th:if="${prod==null}">
+		<p>등록된 상품이 없습니다.</p>
+</div>
+<p>
+<a th:href="@{/update(num=${prod.num})}">상품수정</a>
+<a th:href="@{/delete(num=${prod.num})}">상품삭제</a>
+<a th:href="@{/regist}">상품등록</a>
+<a th:href="@{/list}">상품목록</a>
+<a th:href="@{/}">메인으로</a>
+</body>
+</html>

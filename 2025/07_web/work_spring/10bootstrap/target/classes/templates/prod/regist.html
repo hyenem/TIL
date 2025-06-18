@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>상품 등록</title>
+</head>
+
+<body>
+<th:block th:replace="~{include/header :: headerFragment }"></th:block>
+<h2>상품등록</h2>
+<form th:action="@{/regist}" method="post">
+  상품번호: <input type="text" name="num" value="1004"> <span id="check" style="color:red;"></span><br>
+  상품이름: <input type="text" name="title" value="SmartTV"><br>
+  상품가격: <input type="text" name="price" value="40000"><br>
+  상품회사: 
+  	<select name="cno">
+  <option th:each="comp : ${comps}" th:value="${comp.cno}" th:text="${comp.name}"></option>
+</select><br>
+  <input type="submit" value="등록">
+  <input type="reset" value="취소">
+</form>
+<p>
+<a th:href="@{/list}">상품목록</a>
+<a th:href="@{/}">메인으로</a>
+<script th:inline="javascript">
+let num=document.querySelector("input[name=num]");
+let checkurl = [[@{/check}]]
+num.addEventListener("focusout",()=>{
+   fetch(checkurl+"?num="+num.value)
+  .then(response=>response.text())
+  .then(data=>document.querySelector("#check").innerHTML=data)
+  .catch(msg=>console.error(msg));
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>메인 페이지</title>
+</head>
+<body>
+<th:block th:replace="~{include/header ::headerFragment}"></th:block>
+
+<div th:if="${session.loginUser==null}">
+    <h2>로그인</h2>
+    <form th:action="@{/login}" method="post">
+      아이디: <input type="text" id="id" name="id"><br>
+      패스워: <input type="password" id="pw" name="pw" value="123"><br>
+      <input type="checkbox" name="idcheck" value="on"> id 기억하기<br>
+      <input type="submit" value="로그인">
+    </form>
+</div>
+<p>
+<a th:href="@{/regist}">상품등록</a>
+<a th:href="@{/list}">상품목록</a>
+<a th:href="@{/endprod}">마지막등록상품</a>
+<br>
+<a th:href="@{/rest}">상품REST</a>
+<a th:href="@{/swagger-ui.html}">상품API</a>
+<script th:inline="javascript">
+  document.querySelector("form").onsubmit=function(){
+    let id=document.querySelector("#id");
+    if(id.value.length==0){
+      alert("아이디 확인");
+      id.focus();
+      event.preventDefault();
+      return;
+    }
+    let pw=document.querySelector("#pw");
+    if(pw.value.length==0){
+      alert("패스워드 확인");
+      pw.focus();
+      event.preventDefault();
+      return;
+    }
+  }
+  function getCookie(name) {
+        const value=`; ${document.cookie}`;
+        const parts=value.split(`; ${name}=`);
+        if(parts.length===2) return parts.pop().split(';').shift();
+  }
+  const idcheck=getCookie('idcheck');
+  if(idcheck){
+    document.getElementById('id').value=idcheck;
+    document.getElementsByName('idcheck')[0].checked=true;
+  } 
+</script>
+</body>
+</html>
