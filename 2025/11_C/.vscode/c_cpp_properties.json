@@ -1,0 +1,17 @@
+{
+  "configurations": [
+    {
+      "name": "windows-gcc-x64",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "${workspaceFolder}"
+      ],
+      "compilerPath": "C:/Users/student/Desktop/TIL/2025/11_C/mingw64/bin/gcc.exe",
+      "cStandard": "c17",
+      "cppStandard": "gnu++17",
+      "intelliSenseMode": "windows-gcc-x64",
+      "compilerArgs": []
+    }
+  ],
+  "version": 4
+}
