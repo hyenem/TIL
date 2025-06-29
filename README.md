@@ -1,1 +1,1 @@
-# TIL(`Tecnology` I Learned)
+# TIL(`Technology` I Learned)
