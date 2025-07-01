@@ -2,7 +2,7 @@
 #include<stdlib.h>
 // 관계연산자
 
-int main02() {
+int main() {
 	int a = 10, b = 20, res;
 	res = a > b;
 	// 거짓은 0 , 0 이 아니면 참(1)

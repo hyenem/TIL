@@ -2,7 +2,7 @@
 #include<stdlib.h>
 
 
-int main() {
+int main04() {
 	// 콤마 연산자
 	int a = 12, b = 10;
 	int res;

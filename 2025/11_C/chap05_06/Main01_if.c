@@ -1,13 +1,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
-void functionName(){
-	int a = 10;
-	printf("a = %d \n", a);
-}
-
-int main() {
+int main01() {
 	int a, b;
 	printf("두 정수를 입력하세요\n");
 	scanf("%d %d", &a, &b);

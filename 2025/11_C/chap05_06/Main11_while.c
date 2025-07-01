@@ -1,6 +1,6 @@
 
 #include <stdio.h>
-int main() {
+int main11() {
 	int i = 1, sum = 0, n;
 	printf("양의 정수 n을 입력하세요: ");
 	scanf("%d", &n);
@@ -17,6 +17,7 @@ int main() {
 			i += 2;
 			continue;
 		}
+		// continue 이후의 문장을 실행하지 안고 다음 반복으로 넘어간다
 	}
 	printf("합은 %d\n", sum);
 

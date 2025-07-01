@@ -8,14 +8,14 @@ int main(void) {
 
 	for(j=2;j<=9;j++) {
 		if(j== 3 || j == 7){
-			// continue;
+			continue;
 			goto L;
 
 		}
 		for (i = 1; i <= 9; i++) {
 			res = j * i;
 			printf("%d * %d = %d\n",j, i, res);
-
+			
 		}
 	}
 L:

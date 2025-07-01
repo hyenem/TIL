@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
+int main10(void) {
 	int res;
 	int i = 1;   // 초기식
 	while (i <= 9) {

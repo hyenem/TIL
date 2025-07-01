@@ -1,6 +1,17 @@
 {
-  "version": "0.2.0",
   "configurations": [
+    {
+      "name": "windows-gcc-x64",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "${workspaceFolder}"
+      ],
+      "compilerPath": "C:/Users/student/Desktop/TIL/2025/11_C/mingw64/bin/gcc.exe",
+      "cStandard": "c17",
+      "cppStandard": "gnu++17",
+      "intelliSenseMode": "windows-gcc-x64",
+      "compilerArgs": []
+    },
     {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
@@ -8,8 +19,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/student/Desktop/TIL/2025/11_C/chap14",
-      "program": "c:/Users/student/Desktop/TIL/2025/11_C/chap14/build/Debug/outDebug",
+      "cwd": "c:/Users/student/Desktop/TIL/2025/11_C/chap16",
+      "program": "c:/Users/student/Desktop/TIL/2025/11_C/chap16/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "C:/Users/student/Desktop/TIL/2025/11_C/mingw64/bin/gdb.exe",
       "setupCommands": [
@@ -20,5 +31,6 @@
         }
       ]
     }
-  ]
+  ],
+  "version": 4
 }

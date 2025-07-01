@@ -2,7 +2,7 @@
 #include<stdlib.h>
 
 // 형변환연산자
-int main() {
+int main03() {
 	int a = 12, b = 10;
 	double res;
 	
