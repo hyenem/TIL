@@ -1,0 +1,20 @@
+{
+	"Basic C++ Program": {
+    "prefix": "cpp",
+    "body": [
+	"#include <iostream>",
+	"#include <cstdlib>",
+	"#include <windows.h>",
+	"using namespace std;",
+	"",
+	"int main() {",
+	"	SetConsoleOutputCP(65001);",
+	"",
+	"",
+	"",
+	"    return 0;",
+	"}"
+    ],
+    "description": "기본 C++ 프로그램 템플릿"
+  }
+}

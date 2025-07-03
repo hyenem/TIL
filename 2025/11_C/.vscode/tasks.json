@@ -8,9 +8,9 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 // 현재파일
-                "${file}",
+                // "${file}",
                 // 현재폴더모든파일
-                // "*.c",
+                "*.c",
                 // 특정파일
                 //  "-I${fileDirname}",
                 //  "${fileDirname}\\main01.c",
