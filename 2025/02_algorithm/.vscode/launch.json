@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/student/Desktop/TIL/2025/12_CPP/chap15",
-      "program": "c:/Users/student/Desktop/TIL/2025/12_CPP/chap15/build/Debug/outDebug",
+      "cwd": "c:/Users/student/Desktop/TIL/2025/02_algorithm/B/BOJ5670",
+      "program": "c:/Users/student/Desktop/TIL/2025/02_algorithm/B/BOJ5670/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
